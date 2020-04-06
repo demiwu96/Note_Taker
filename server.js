@@ -71,4 +71,27 @@ app.post("/api/notes", function (req, res) {
     return res.json(true);
 });
 
+// delete notes
+app.post("/api/deletenotes", function (req, res) {
+    const noteID = req.body;
+
+    for (var i = 0; i < savedNotes.length; i++) {
+        let currentNote = savedNotes[i];
+
+        if (currentNote.id == noteID.id) {
+            let index = savedNotes.indexOf(currentNote);
+            savedNotes.splice(index, 1);
+
+            // update db.json
+            fs.writeFile("db/db.json", JSON.stringify(savedNotes), e => {
+                if (e) {
+                    console.log(e);
+                }
+            });
+        }
+    };
+
+    return res.json(true);
+});
+
 app.listen(port, () => console.log(`Listening on localhost:${port}`));
