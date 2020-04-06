@@ -4,9 +4,9 @@ html, body {
   padding: 0;
 }
 
-#autoSaveBadge{
-  padding: 10px;
-  /* display: none; */
+.badge-custom{
+  padding: 8px;
+  display: none;
 }
 
 .save-note {
