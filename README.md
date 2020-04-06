@@ -1,7 +1,12 @@
 # Note Taker
 
 ## Description
-A simple app for taking notes. The user can create, save, delete and update existing notes at any time. All the notes will be stored in db_json file.
+A simple app for taking notes. The user can create, save, delete and update existing notes at any time. All the notes will be stored in db.json file.
+
+Instructions:
+* Click the pen on the right corner to create new empty note
+* The user needs to enter a title and text for the note before it can be saved to the database
+* When user go to other notes, the current note will be saved automatically
 
 ## Installation
 * npm required:
