@@ -70,3 +70,5 @@ app.post("/api/notes", function (req, res) {
     });
     return res.json(true);
 });
+
+app.listen(port, () => console.log(`Listening on localhost:${port}`));
