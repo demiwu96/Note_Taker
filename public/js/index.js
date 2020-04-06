@@ -30,6 +30,7 @@ const saveNote = function () {
       text: noteTextBox.val(),
       id: activeNote.id
     };
+    activeNote = newNote;
   } else {
     let noteID = Math.floor(Math.random() * 99999);
     newNote = {
