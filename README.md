@@ -1,12 +1,7 @@
 # Note Taker
 
 ## Description
-The users can create team member summary page through one command:
-```sh
-node index.js
-```
-The user will be prompt for information about the team manager and then information about the engineers and interns. After entering all the necessary information, the application will create a HTML page with all the information.
-Each role will have different information:
+A simple app for taking notes. The user can create, save, delete and update existing notes at any time. All the notes will be stored in db_json file.
 
 ## Installation
 * npm required:
