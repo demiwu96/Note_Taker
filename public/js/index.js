@@ -31,7 +31,6 @@ const handleNoteSave = function () {
       id: activeNote.id
     };
   } else {
-    $.get(currentURL + "/api/notes")
     let noteID = Math.floor(Math.random() * 99999);
     newNote = {
       title: $noteTitle.val(),
