@@ -41,3 +41,32 @@ app.get("/api/notes_:id", function (req, res) {
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "/public/index.html"));
 });
+
+// add new note to database
+app.post("/api/notes", function (req, res) {
+    const newNote = req.body;
+    let foundNote = false;
+
+    // check if note id exist in db
+    for (var i = 0; i < savedNotes.length; i++) {
+        if (parseInt(newNote.id) == savedNotes[i].id) {
+            savedNotes[i].text = newNote.text;
+            savedNotes[i].title = newNote.title;
+            foundNote = true;
+            break;
+        }
+    }
+
+    // When no note id matches, add new note to db
+    if (!foundNote) {
+        savedNotes.push(newNote);
+    };
+
+    // save the new db into db.json
+    fs.writeFile("db/db.json", JSON.stringify(savedNotes), e => {
+        if (e) {
+            console.log(e);
+        }
+    });
+    return res.json(true);
+});
