@@ -55,7 +55,6 @@ const saveNote = function () {
 const deleteNote = function (event) {
   // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
-  alert("Are you sure you want to delete the note?");
   var note = $(this)
     .parent(".list-group-item")
     .data();
