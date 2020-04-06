@@ -2,6 +2,8 @@ const noteTitle = $(".note-title");
 const noteTextBox = $(".note-textarea");
 const saveBtn = $(".save-note");
 const newNoteBtn = $(".new-note");
+const savedBadge = $("#savedBadge");
+const deletedBadge = $("#deletedBadge");
 const $noteList = $(".list-container .list-group");
 
 // activeNote is used to keep track of the note in the textarea
@@ -53,6 +55,7 @@ const saveNote = function () {
 const deleteNote = function (event) {
   // prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
+  alert("Are you sure you want to delete the note?");
   var note = $(this)
     .parent(".list-group-item")
     .data();
@@ -65,7 +68,7 @@ const deleteNote = function (event) {
   $.post("api/deletenotes", noteID)
     .then(function (data) {
       if (true) {
-        alert("Selected note deleted!");
+        showDeletedBadge();
         getAndRenderNotes();
         renderActiveNote();
       }
@@ -75,11 +78,9 @@ const deleteNote = function (event) {
 // Sets the activeNote and displays it
 const NoteDisplay = function () {
   if (!noteTitle.val().trim() || !noteTextBox.val().trim()) {
-    console.log("no new note to save");
     activeNote = $(this).data();
     renderActiveNote();
   } else {
-    console.log("save current note");
     saveNote();
     activeNote = $(this).data();
     renderActiveNote();
@@ -101,6 +102,16 @@ const handleRenderSaveBtn = function () {
   } else {
     saveBtn.show();
   }
+};
+
+const showSavedBadge = function () {
+  savedBadge.show();
+  setTimeout(() => savedBadge.hide(), 1000);
+};
+
+const showDeletedBadge = function () {
+  deletedBadge.show();
+  setTimeout(() => deletedBadge.hide(), 1000);
 };
 
 // Render's the list of note titles
@@ -131,7 +142,7 @@ const getAndRenderNotes = function () {
 
 saveBtn.on("click", () => {
   saveNote();
-  alert("Saved!");
+  showSavedBadge();
 });
 $noteList.on("click", ".list-group-item", NoteDisplay);
 newNoteBtn.on("click", newNoteDisplay);

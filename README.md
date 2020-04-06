@@ -19,4 +19,4 @@ A simple app for taking notes. The user can create, save, delete and update exis
 Yu-Hsuan Wu
 
 ## Demo
-![demo]()
+![demo](./demo/demo.gif)
