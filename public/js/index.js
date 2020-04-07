@@ -88,9 +88,20 @@ const NoteDisplay = function () {
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const newNoteDisplay = function () {
-  saveNote();
-  activeNote = {};
-  renderActiveNote();
+  var createNew;
+  if (!noteTitle.val().trim() || !noteTextBox.val().trim()) {
+    createNew = false;
+  } else {
+    createNew = true;
+  };
+
+  if (!createNew) {
+    alert("Please enter the title and text before creating a new note");
+  } else {
+    saveNote();
+    activeNote = {};
+    renderActiveNote();
+  }
 };
 
 // If a note's title or text are empty, hide the save button
