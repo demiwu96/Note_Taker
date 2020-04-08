@@ -6,7 +6,7 @@ const port = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('docs'))
+app.use(express.static('public'));
 
 let savedNotes = [];
 
@@ -19,7 +19,7 @@ fs.readFile("./db/db.json", 'utf-8', (err, data) => {
 });
 
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "/docs/notes.html"));
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
 });
 
 app.get("/api/notes", function (req, res) {
@@ -39,7 +39,7 @@ app.get("/api/notes_:id", function (req, res) {
 });
 
 app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "/docs/index.html"));
+    res.sendFile(path.join(__dirname, "/public/index.html"));
 });
 
 // add new note to database
