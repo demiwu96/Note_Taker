@@ -26,4 +26,4 @@ Yu-Hsuan Wu
 ## Demo
 ![demo](./demo/demo.gif)
 
-[Click here](https://desolate-gorge-66178.herokuapp.com/) to see my project
+[Click here](https://note-taker-042020.herokuapp.com/) to see my project
