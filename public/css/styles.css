@@ -4,6 +4,10 @@ html, body {
   padding: 0;
 }
 
+.navbar-custom{
+  background-color: #29b6f6;
+}
+
 .badge-custom{
   padding: 8px;
   display: none;
@@ -61,7 +65,7 @@ html, body {
 .list-container i {
   font-size: 1.1rem;
   cursor: pointer;
-  color: rebeccapurple;
+  color: #0d47a1;
 }
 
 .list-container .list-group-item {
@@ -72,7 +76,7 @@ html, body {
 }
 
 .list-custom {
-  background-color: rgb(232, 211, 253);
+  background-color: #b3e5fc;
   font-weight: bold;
-  color: rebeccapurple;
+  color: #0d47a1;
 }
