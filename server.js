@@ -18,10 +18,6 @@ fs.readFile("./db/db.json", 'utf-8', (err, data) => {
     };
 });
 
-app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, "/public/notes.html"));
-});
-
 app.get("/api/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "/db/db.json"));
     // return res.json(savedNotes);

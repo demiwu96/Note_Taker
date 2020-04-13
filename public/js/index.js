@@ -4,6 +4,7 @@ const saveBtn = $(".save-note");
 const newNoteBtn = $(".new-note");
 const savedBadge = $("#savedBadge");
 const deletedBadge = $("#deletedBadge");
+const warningBadge = $("#warningBadge");
 const $noteList = $(".list-container .list-group");
 
 // activeNote is used to keep track of the note in the textarea
@@ -96,7 +97,9 @@ const newNoteDisplay = function () {
   };
 
   if (!createNew) {
-    alert("Please enter the title and text before creating a new note");
+    warningBadge.show();
+    setTimeout(() => warningBadge.hide(), 1500);
+    // alert("Please enter the title and text before creating a new note");
   } else {
     saveNote();
     activeNote = {};

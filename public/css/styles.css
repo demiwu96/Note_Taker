@@ -9,7 +9,14 @@ html, body {
 }
 
 .badge-custom{
+  font-size: 15px;
   padding: 8px;
+  display: none;
+}
+
+.badgeWarning-custom{
+  padding: 8px;
+  font-size: 18px;
   display: none;
 }
 
