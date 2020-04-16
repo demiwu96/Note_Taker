@@ -13,6 +13,11 @@ Instructions:
     * file-system
     * [Express](https://expressjs.com/)
 
+Run the following commend in the terminal to install the required npm:
+```sh
+npm install
+```
+
 ## Built with
 * HTML
 * Bootstrap
